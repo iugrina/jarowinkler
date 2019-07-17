@@ -43,7 +43,7 @@ function getCommonCharacters( $string1, $string2, $allowedDistance ){
   $str2_len = strlen($string2);
   $temp_string2 = $string2;
    
-  $commonCharacters='';
+  $commonCharacters = [];
 
   for( $i=0; $i < $str1_len; $i++){
     
@@ -55,14 +55,14 @@ function getCommonCharacters( $string1, $string2, $allowedDistance ){
       if( $temp_string2[$j] == $string1[$i] ){
         $noMatch = False;
 
-	$commonCharacters .= $string1[$i];
+	$commonCharacters[$string1[$i]] = $string1[$i];
 
 	$temp_string2[$j] = '';
       }
     }
   }
 
-  return $commonCharacters;
+  return implode("", $commonCharacters);
 }
   
 function Jaro( $string1, $string2 ){
