@@ -41,7 +41,7 @@ function getCommonCharacters( $string1, $string2, $allowedDistance ){
   
   $str1_len = strlen($string1);
   $str2_len = strlen($string2);
-  $temp_string2 = $string2;
+  $temp_string2 = str_plit($string2);
    
   $commonCharacters='';
 
